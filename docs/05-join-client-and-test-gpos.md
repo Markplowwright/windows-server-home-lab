@@ -59,6 +59,20 @@ Opening Control Panel as `mplowright` gives the message "This operation has been
 
 ![Control Panel restriction message](images/05-control-panel-restricted.png)
 
+## Troubleshooting DNS (the biggest problem)
+
+The domain join depends on the client finding the domain controller through DNS. Mine could not, so I worked through it step by step.
+
+1. **Symptom:** `nslookup plowlab.local` on the client failed to find the domain.
+2. **Narrowed it down:** Pointing `nslookup` directly at the DC's private IP (`nslookup plowlab.local <DC private IP>`) returned the correct answers. So the domain's DNS records were fine and the DC was fine. The client was just asking the wrong DNS server.
+3. **Found the cause:** The default server in the `nslookup` output was `168.63.129.16`, Azure's built-in DNS. `ipconfig /all` on the client confirmed the same. Azure's DNS does not know about my private domain.
+4. **Checked the network card:** The client's NIC was set to "Inherit from virtual network", so the fix belongs on the virtual network, not on the VM.
+5. **Fixed it:** Virtual network > DNS servers > **Custom**, entered the domain controller's private IP, and saved. Both VMs share this network, so the DC and the client now use the same DNS.
+6. **Applied it:** Restarted the client so it picked up the new DNS setting.
+7. **Verified:** `ipconfig /all` showed the DC's private IP as the DNS server, and `nslookup plowlab.local` resolved. Only then did I join the domain.
+
+**Lesson:** In Azure, a domain-joined machine must use the domain controller for DNS. The DC also needs a static private IP so that setting never breaks. If DNS points anywhere else, the join fails even though everything else is correct.
+
 ## Results
 
 | GPO | Result on the client |
