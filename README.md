@@ -13,6 +13,8 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 | 00 | Created a Windows Server 2025 VM in Azure with cost controls | [00 Create the Azure VM](docs/00-create-azure-vm.md) |
 | 01 | Installed the Active Directory Domain Services role | [01 Install AD DS](docs/01-install-ad-ds.md) |
 | 02 | Promoted the server to a domain controller | [02 Promote to a domain controller](docs/02-promote-domain-controller.md) |
+| 03 | Created a domain user in an OU | [03 Create a domain user](docs/03-create-domain-user.md) |
+| 04 | Built six GPOs: password policy, drive mapping, wallpaper, Control Panel restriction, USB block, account lockout | [04 Group Policy objects](docs/04-group-policy-objects.md) |
 
 ## Environment
 
@@ -26,9 +28,10 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 
 Planned, not done yet. I will move items up to the table above as I finish them.
 
-- [ ] Organizational units, users and security groups (the same ideas as my simulator, on a real domain)
+- [x] Users created in an OU. OUs and groups (`IT` security group, `DL-ITAdmins` distribution group) exist; write-up for those is pending
 - [ ] DNS: read the records the domain creates and test name resolution
-- [ ] Group Policy: create a real GPO, link it to an OU, test with `gpupdate` and `gpresult`
+- [x] Group Policy: GPOs created and linked (see runbook 04)
+- [ ] Group Policy testing: join a client, then verify with `gpupdate` and `gpresult`
 - [ ] File server and shared folders with permissions
 - [ ] Join a Windows client to the domain
 - [ ] Windows Server Update Services (WSUS)
