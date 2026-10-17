@@ -15,6 +15,7 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 | 02 | Promoted the server to a domain controller | [02 Promote to a domain controller](docs/02-promote-domain-controller.md) |
 | 03 | Created a domain user in an OU | [03 Create a domain user](docs/03-create-domain-user.md) |
 | 04 | Built six GPOs: password policy, drive mapping, wallpaper, Control Panel restriction, USB block, account lockout | [04 Group Policy objects](docs/04-group-policy-objects.md) |
+| 05 | Joined a Windows 11 client to the domain and tested the GPOs with `gpupdate` and `gpresult` | [05 Join a client and test GPOs](docs/05-join-client-and-test-gpos.md) |
 
 ## Environment
 
@@ -31,9 +32,10 @@ Planned, not done yet. I will move items up to the table above as I finish them.
 - [x] Users created in an OU. OUs and groups (`IT` security group, `DL-ITAdmins` distribution group) exist; write-up for those is pending
 - [ ] DNS: read the records the domain creates and test name resolution
 - [x] Group Policy: GPOs created and linked (see runbook 04)
-- [ ] Group Policy testing: join a client, then verify with `gpupdate` and `gpresult`
+- [x] Group Policy testing: client joined, verified with `gpupdate` and `gpresult` (see runbook 05)
+- [ ] Fix drive map (real share) and wallpaper GPO, then re-test
 - [ ] File server and shared folders with permissions
-- [ ] Join a Windows client to the domain
+- [x] Join a Windows client to the domain
 - [ ] Windows Server Update Services (WSUS)
 - [ ] Backups and a test restore
 - [ ] Imaging with Windows Deployment Services and MDT
