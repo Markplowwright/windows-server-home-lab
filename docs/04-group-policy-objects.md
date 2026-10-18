@@ -90,7 +90,7 @@ All six GPOs are linked to `plowlab.local` with **Link Enabled: Yes** and **Enfo
 
 ## Not done yet
 
-- Point the drive map at a real shared folder and add a drive label and the Reconnect option.
+- ~~Point the drive map at a real shared folder~~ Done with a new `Mapped Drives` GPO, see [runbook 06](06-file-share-and-mapped-drive.md). The older placeholder `Drive Mapping` GPO should be unlinked.
 - Add a wallpaper image on a share and set its path in the policy.
 - Move the password and lockout GPOs above the Default Domain Policy and confirm with `Get-ADDefaultDomainPasswordPolicy`.
 - ~~Join a client and verify with `gpresult`~~ Done, see [runbook 05](05-join-client-and-test-gpos.md).

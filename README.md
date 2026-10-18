@@ -16,6 +16,8 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 | 03 | Created a domain user in an OU | [03 Create a domain user](docs/03-create-domain-user.md) |
 | 04 | Built six GPOs: password policy, drive mapping, wallpaper, Control Panel restriction, USB block, account lockout | [04 Group Policy objects](docs/04-group-policy-objects.md) |
 | 05 | Joined a Windows 11 client to the domain and tested the GPOs with `gpupdate` and `gpresult` | [05 Join a client and test GPOs](docs/05-join-client-and-test-gpos.md) |
+| 06 | Shared a folder, mapped it by hand, then by GPO | [06 File share and mapped drive](docs/06-file-share-and-mapped-drive.md) |
+| 07 | Installed FSRM, set a hard quota and an active file screen | [07 FSRM quotas and file screening](docs/07-fsrm-quotas-and-file-screening.md) |
 
 ## Environment
 
@@ -34,7 +36,9 @@ Planned, not done yet. I will move items up to the table above as I finish them.
 - [x] Group Policy: GPOs created and linked (see runbook 04)
 - [x] Group Policy testing: client joined, verified with `gpupdate` and `gpresult` (see runbook 05)
 - [ ] Fix drive map (real share) and wallpaper GPO, then re-test
-- [ ] File server and shared folders with permissions
+- [x] File share created and mapped by GPO (runbook 06)
+- [x] FSRM installed with a quota and a file screen (runbook 07)
+- [ ] Folder-level permissions test (separate IT and Public folders) and client tests of the quota and file screen
 - [x] Join a Windows client to the domain
 - [ ] Windows Server Update Services (WSUS)
 - [ ] Backups and a test restore
