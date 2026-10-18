@@ -44,6 +44,8 @@ Planned, not done yet. I will move items up to the table above as I finish them.
 - [ ] Backups and a test restore
 - [ ] Imaging with Windows Deployment Services and MDT
 
+Detailed steps for everything below are in [Next stage steps](docs/next-stage-steps.md): service account and display PC, NTFS/share permissions with inheritance and access-based enumeration, MSI software deployment by Group Policy, WSUS, MDT, and backups.
+
 See the [troubleshooting log](docs/troubleshooting-log.md) for problems I hit along the way.
 
 ## Safety notes
