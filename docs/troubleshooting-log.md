@@ -13,5 +13,6 @@ Real problems from the lab, with the cause and the fix. Newest at the bottom.
 | 2026-10-17 | RDP kept signing in as the local admin | Windows App saved credentials | Set the saved PC to "Ask when required" and signed in as the domain user |
 | 2026-10-17 | "You must change your password before signing in" | "User must change password at next logon" was ticked | Reset the password in AD Users and Computers with that box unticked |
 | 2026-10-17 | `gpresult /h C:\gpreport.html` returned "Access is denied" | Standard users cannot write to the root of `C:\` | Saved the report to the Desktop |
+| 2026-10-18 | Windows Settings would not open on the domain controller | Restrict Control Panel was linked at the domain root, so it also applied to my admin account in the default `Users` container | Removed the domain-root link, linked the GPO to `USA > Users`, verified with `Get-GPInheritance` and `gpresult /r /scope user` |
 
 More entries will be added as I build the next steps.
