@@ -49,7 +49,7 @@ A drive map item for `E:` with the action **Update**. The location is still the 
 
 ### 3. Desktop wallpaper
 
-The setting is enabled with the style set to **Fill**. I have not set an image path yet, because the lab has no shared wallpaper file. A working value looks like `\\SERVER\Share\wallpaper.jpg`.
+The setting is enabled with the style set to **Fill**. At this stage I had not set a working image path. It later turned out a local `C:\` path shows a black desktop on the client; the fix is in [runbook 08](08-wallpaper-gpo-fix.md). A working value looks like `\\SERVER\Share\wallpaper.jpg`.
 
 ![Desktop Wallpaper enabled](images/06-wallpaper-policy-enabled.png)
 
@@ -91,7 +91,7 @@ All six GPOs are linked to `plowlab.local` with **Link Enabled: Yes** and **Enfo
 ## Not done yet
 
 - ~~Point the drive map at a real shared folder~~ Done with a new `Mapped Drives` GPO, see [runbook 06](06-file-share-and-mapped-drive.md). The older placeholder `Drive Mapping` GPO should be unlinked.
-- Add a wallpaper image on a share and set its path in the policy.
+- ~~Add a wallpaper image on a share and set its path in the policy~~ Done, see [runbook 08](08-wallpaper-gpo-fix.md).
 - Move the password and lockout GPOs above the Default Domain Policy and confirm with `Get-ADDefaultDomainPasswordPolicy`.
 - ~~Join a client and verify with `gpresult`~~ Done, see [runbook 05](05-join-client-and-test-gpos.md).
 - Finish re-linking the other user and computer GPOs (see **Where GPOs should be linked** below).

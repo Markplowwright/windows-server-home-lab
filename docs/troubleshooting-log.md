@@ -18,5 +18,7 @@ Real problems from the lab, with the cause and the fix. Newest at the bottom.
 | 2026-10-18 | FSRM quota email notification | No SMTP mail server in the lab, so email cannot be delivered | Documented as needing an SMTP server; use the event log notification instead |
 | 2026-10-18 | Quota template named `10gb Limit Storage` but limit is 100 MB | Saved a custom 100 MB quota as a template with the wrong name | Noted for renaming |
 | 2026-10-18 | File screen blocks Image files in `SHARED` | I selected Image Files among the blocked groups | Wallpaper image will live in a separate folder, not in `SHARED` |
+| 2026-10-30 | Wallpaper GPO applied but the client desktop was black | Wallpaper Name was a local path (`C:\desktop\wallpaper\companyimage.jpg`), which the client looked for on its own disk | Shared the folder as `\\PlowVM\Wallpaper`, set the policy to the UNC path, style Fill, signed out and in. Details in [runbook 08](08-wallpaper-gpo-fix.md) |
+| 2026-10-30 | Wallpaper share was open to individual users only | Granted Read to single accounts while testing | Changed the share to **Domain Users** (Read) and removed the one-off entries |
 
 More entries will be added as I build the next steps.
