@@ -78,8 +78,8 @@ The domain join depends on the client finding the domain controller through DNS.
 | GPO | Result on the client |
 |---|---|
 | Restrict Control Panel | Applied and enforced. Control Panel is blocked for the user |
-| Drive Mapping | Applied (Drive Maps component: Success). No drive appears because the path is still the placeholder `\\servername\folder` |
-| Desktop wallpaper | Not in the applied list for this user. Needs a look (see Next steps) |
+| Drive Mapping | Applied (Drive Maps component: Success). No drive appeared at the time because the path was still the placeholder `\\servername\folder`. Fixed in [runbook 06](06-file-share-and-mapped-drive.md) |
+| Desktop wallpaper | Not in the applied list at first because the image path was a local path. Fixed in [runbook 08](08-wallpaper-gpo-fix.md) |
 | Password policy, account lockout, USB block | Computer or domain-level settings. Not shown in a standard-user `gpresult`; need an elevated check |
 
 ## Problems I hit
@@ -98,9 +98,6 @@ The domain join depends on the client finding the domain controller through DNS.
 - `gpresult /r` shows which GPOs applied. `gpresult /h` makes a report that is easier to read and screenshot. Computer-side results need an elevated prompt.
 - A GPO can be applied correctly even when you see no visible effect, such as a drive map pointing at a placeholder path.
 
-## Next steps
+## Next
 
-- Create a real shared folder on `PLOWVM` and point the drive map at it.
-- ~~Check why the wallpaper GPO is not in the applied list~~ Resolved: the image path was a local path. See [runbook 08](08-wallpaper-gpo-fix.md).
-- Run `gpresult /scope computer /r` from an admin prompt to confirm the computer-side policies.
-- Move the password and lockout GPOs above the Default Domain Policy in link order.
+Share a real folder and map it by hand, then by GPO: [runbook 06](06-file-share-and-mapped-drive.md). The wallpaper fix is in [runbook 08](08-wallpaper-gpo-fix.md).
