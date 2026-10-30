@@ -67,11 +67,4 @@ Because it is a Preferences setting under User Configuration, it applies at sign
 | Problem | Cause | Fix |
 |---|---|---|
 | Trying to map a folder name failed to make sense | I used the folder name instead of the share name | Used the share name `SHARED` |
-| Share permissions only give Domain Users **Read** | I did not raise them above the default | Open question: set share permissions to Change and let NTFS restrict, because write access needs both layers to allow it |
-| An older Drive Mapping GPO also exists | It still points at the placeholder path | To retire: remove its link from `USA > Users` |
-
-## Not verified yet
-
-- The `S:` drive appeared on the client after policy refresh, but my earlier manual `S:` mapping was still present, so that does not prove the GPO alone works. To prove it: delete the manual mapping (`net use S: /delete`), run `gpupdate /force`, sign out and in, and confirm the drive returns.
-- Folder-level permissions (separate `IT` and `Public` folders with different groups) are not built yet, so I have not shown a user getting "Access denied" and then being granted access.
-- The **Reconnect** box in the GPO was left unticked.
+| Share permissions only give Domain Users **Read** | I did not raise them above the default | Write access needs both the share and NTFS layers to allow it, so the permissions model gets reworked in the next runbook (share open to Authenticated Users, NTFS restricts) |

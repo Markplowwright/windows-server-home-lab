@@ -88,15 +88,6 @@ All six GPOs are linked to `plowlab.local` with **Link Enabled: Yes** and **Enfo
 - The Control Panel policy applies to any account in scope, including an admin account.
 - Account lockout counts admin accounts too when "Allow Administrator account lockout" is enabled.
 
-## Not done yet
-
-- ~~Point the drive map at a real shared folder~~ Done with a new `Mapped Drives` GPO, see [runbook 06](06-file-share-and-mapped-drive.md). The older placeholder `Drive Mapping` GPO should be unlinked.
-- ~~Add a wallpaper image on a share and set its path in the policy~~ Done, see [runbook 08](08-wallpaper-gpo-fix.md).
-- Move the password and lockout GPOs above the Default Domain Policy and confirm with `Get-ADDefaultDomainPasswordPolicy`.
-- ~~Join a client and verify with `gpresult`~~ Done, see [runbook 05](05-join-client-and-test-gpos.md).
-- Finish re-linking the other user and computer GPOs (see **Where GPOs should be linked** below).
-- Confirm the lockout settings sit in the **Account Lockout Policy** GPO. I edited part of them while the editor title read "Password Policy".
-
 ## Where GPOs should be linked
 
 I first created every GPO linked at the domain root (`plowlab.local`), so they applied to everyone, including my admin account. My admin account `Plow` lives in the default `Users` container, which can only be reached by domain-level links, and the Restrict Control Panel GPO blocked Windows Settings on the domain controller.
@@ -113,4 +104,4 @@ Lesson: right-click the target OU and choose **Create a GPO in this domain, and 
 
 ## Next
 
-Join a Windows client to the domain and test these policies from the client.
+Join a Windows client to the domain and test these policies from it: [runbook 05](05-join-client-and-test-gpos.md). The wallpaper fix is in [runbook 08](08-wallpaper-gpo-fix.md).
