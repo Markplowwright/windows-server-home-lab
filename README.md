@@ -14,9 +14,9 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 | 01 | Installed the Active Directory Domain Services role | Done | [01 Install AD DS](docs/01-install-ad-ds.md) |
 | 02 | Promoted the server to a domain controller | Done | [02 Promote to a domain controller](docs/02-promote-domain-controller.md) |
 | 03 | Created a domain user in an OU | Done | [03 Create a domain user](docs/03-create-domain-user.md) |
-| 04 | Built six GPOs: password policy, drive mapping, wallpaper, Control Panel restriction, USB block, account lockout | Needs retest | [04 Group Policy objects](docs/04-group-policy-objects.md) |
+| 04 | Built six GPOs: password policy, drive mapping, wallpaper, Control Panel restriction, USB block, account lockout | Done | [04 Group Policy objects](docs/04-group-policy-objects.md) |
 | 05 | Joined a Windows 11 client to the domain and tested the GPOs with `gpupdate` and `gpresult` | Done | [05 Join a client and test GPOs](docs/05-join-client-and-test-gpos.md) |
-| 06 | Shared a folder, mapped it by hand, then by GPO | Needs retest | [06 File share and mapped drive](docs/06-file-share-and-mapped-drive.md) |
+| 06 | Shared a folder, mapped it by hand, then by GPO | Done | [06 File share and mapped drive](docs/06-file-share-and-mapped-drive.md) |
 | 07 | Installed FSRM, set a hard quota and an active file screen | Done | [07 FSRM quotas and file screening](docs/07-fsrm-quotas-and-file-screening.md) |
 | 08 | Fixed the wallpaper GPO: a local path showed a black desktop, a shared folder and UNC path fixed it | Done | [08 Fixing the wallpaper GPO](docs/08-wallpaper-gpo-fix.md) |
 
@@ -30,11 +30,10 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 
 ## Roadmap
 
-Not done yet. Finished items live in the table above, with a status of Done or Needs retest.
+Not done yet. Finished items live in the table above.
 
 - [ ] Write up the OUs and groups (`IT` security group, `DL-ITAdmins` distribution group); they exist, the write-up is pending
 - [ ] DNS: read the records the domain creates and test name resolution
-- [ ] Re-test the drive map GPO (the wallpaper GPO is fixed, see runbook 08)
 - [ ] Folder-level permissions test (separate IT and Public folders) and client tests of the quota and file screen
 - [ ] Windows Server Update Services (WSUS)
 - [ ] Backups and a test restore
