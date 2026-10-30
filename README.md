@@ -18,6 +18,7 @@ It pairs with my [Admin Practice Lab](https://github.com/Markplowwright/admin-pr
 | 05 | Joined a Windows 11 client to the domain and tested the GPOs with `gpupdate` and `gpresult` | Done | [05 Join a client and test GPOs](docs/05-join-client-and-test-gpos.md) |
 | 06 | Shared a folder, mapped it by hand, then by GPO | Needs retest | [06 File share and mapped drive](docs/06-file-share-and-mapped-drive.md) |
 | 07 | Installed FSRM, set a hard quota and an active file screen | Done | [07 FSRM quotas and file screening](docs/07-fsrm-quotas-and-file-screening.md) |
+| 08 | Fixed the wallpaper GPO: a local path showed a black desktop, a shared folder and UNC path fixed it | Done | [08 Fixing the wallpaper GPO](docs/08-wallpaper-gpo-fix.md) |
 
 ## Environment
 
@@ -33,7 +34,7 @@ Not done yet. Finished items live in the table above, with a status of Done or N
 
 - [ ] Write up the OUs and groups (`IT` security group, `DL-ITAdmins` distribution group); they exist, the write-up is pending
 - [ ] DNS: read the records the domain creates and test name resolution
-- [ ] Fix drive map (real share) and wallpaper GPO, then re-test
+- [ ] Re-test the drive map GPO (the wallpaper GPO is fixed, see runbook 08)
 - [ ] Folder-level permissions test (separate IT and Public folders) and client tests of the quota and file screen
 - [ ] Windows Server Update Services (WSUS)
 - [ ] Backups and a test restore

@@ -101,6 +101,6 @@ The domain join depends on the client finding the domain controller through DNS.
 ## Next steps
 
 - Create a real shared folder on `PLOWVM` and point the drive map at it.
-- Check why the wallpaper GPO is not in the applied list (link location, enabled setting and image path).
+- ~~Check why the wallpaper GPO is not in the applied list~~ Resolved: the image path was a local path. See [runbook 08](08-wallpaper-gpo-fix.md).
 - Run `gpresult /scope computer /r` from an admin prompt to confirm the computer-side policies.
 - Move the password and lockout GPOs above the Default Domain Policy in link order.
